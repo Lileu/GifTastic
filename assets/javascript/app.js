@@ -5,45 +5,40 @@
 // * Like many APIs, GIPHY requires developers to use a key to access their API data. To use the GIPHY API, you'll need a GIPHY account (don't worry, it's free!) and then obtain an API Key by [creating an app](https://developers.giphy.com/dashboard/?create=true).
 // * Make sure you switch the protocol in the query URL from **`http to https`**, or the app may not work properly when deployed to Github Pages.
 
+//$(document).ready(function () {
 
-// Initial array of topics
- var topics = ["thank you","yasssss","happy dance","awesome","sad","gag","cute","sorry","high five","bummer","dabbing"];
-
- function buildQueryURL() {
-     var queryURL = "https://api.giphy.com/v1/gifs/search+?"; 
-     var queryParams = {"api_key=": "3HskJVbTCA0hiHZGsNyb1jQ3Qh3U9vjf"};
-     var queryParam.q = $("#search-term").val().trim();
+         // Initial array of topics
+         var topics = ["thank you", "yasssss", "happy dance", "awesome", "sad", "gag", "cute", "sorry", "high five", "bummer", "dabbing"];
+         console.log(topics);
 
 
-     $("#add-topic").on("click", function(event) {
-    //after click event
-     event.preventDefault();
-  // Logging the URL so we have access to it for troubleshooting
-  console.log("---------------\nURL: " + queryURL + "\n---------------");
-  console.log(queryURL + $.param(queryParams));
-  return queryURL + $.param(queryParams);
+         // Function to render buttons from the topics array
 
- }
- 
- //+ queryParam + "api_key=" + key +"&q=&limit=10&offset=0&rating=PG-13&lang=en";
- var q
- 
+         function renderButtons() {
+            // Clear area
+            $("#buttons-area").empty();
 
-$.ajax({
-    url: queryURL,
-    method: "GET",
-})
-   // storing the data from the AJAX request in the results variable
-.then(function(response) {
-console.log(response);
-console.log(queryURL);
-   // storing the data from the AJAX request in the results variable
-var results = response.data;
-// Looping through each result item
+            for (var i = 0; i < topics.length; i++) {
+               var btn = $("<button>");
+               btn.addClass("btn btn-outline-primary gifTopic");
+               btn.attr("data-name", topics[i]);
+               btn.text(topics[i]);
+               $("#buttons-area").append(btn);
+            }
+         }
 
+         renderButtons();
 
-}
+         $("#submitBtn").on('click'), function () {
+               event.preventDefault();
+               var topic = $("#addTopic").val().trim();
+               topics.push(topic);
+               renderButtons();
+            
+         };
+
+      //@returns {string}
 
 
 
-//   * Make sure you switch the protocol in the query URL from **`http to https`**, or the app may not work properly when deployed to Github Pages.
+      //   * Make sure you switch the protocol in the query URL from **`http to https`**, or the app may not work properly when deployed to Github Pages
