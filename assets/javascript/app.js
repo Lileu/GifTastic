@@ -12,11 +12,12 @@
  function buildQueryURL() {
      var queryURL = "https://api.giphy.com/v1/gifs/search+?"; 
      var queryParams = {"api_key=": "3HskJVbTCA0hiHZGsNyb1jQ3Qh3U9vjf"};
-     var queryParam.q = $("#search-term")
-     .val()
-     .trim();
-    
+     var queryParam.q = $("#search-term").val().trim();
 
+
+     $("#add-topic").on("click", function(event) {
+    //after click event
+     event.preventDefault();
   // Logging the URL so we have access to it for troubleshooting
   console.log("---------------\nURL: " + queryURL + "\n---------------");
   console.log(queryURL + $.param(queryParams));
