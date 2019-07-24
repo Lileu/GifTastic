@@ -1,12 +1,27 @@
-$(document).ready(function () {
 
+   $(document).ready(function () {
+      
    // Initial array of topics
-   var topics = ["thank you", "yasssss", "happy dance", "awesome", "sad", "gag", "cute", "sorry", "high five", "bummer", "dabbing"];
+   var topics = ["excitement", "yasssss", "happy dance", "awesome", "sad", "gag", "cute", "sorry", "high five", "bummer", "dabbing"];
    console.log(topics);
-
+   
+      
+   $("#submitBtn").on('click'),function () {
+      event.preventDefault();
+      var newTopic = $("#addTopic").val().trim();
+      var newBtn = $("<button>");
+      newbtn.addClass("btn btn-outline-primary gifTopic");
+      newbtn.attr("data-name", newTopic);
+      newbtn.text(newTopic);
+      $("#buttons-section").append(btn);
+   
+   
+      // var topic = $("#addTopic").val().trim();
+      // topics.push(topic);
+      // renderButtons();
+   };
 
    // Function to render buttons from the topics array
-
    function renderButtons() {
       // Clear section
       $("#buttons-section").empty();
@@ -22,11 +37,7 @@ $(document).ready(function () {
 
    renderButtons();
 
-   // $("#submitBtn").on('click'),function () {
-   //       event.preventDefault();
-   //       var topic = $("#addTopic").val().trim();
-   //       topics.push(topic);
-   //       renderButtons();
+
 
 
    // Click event to retrieve related gifs
@@ -35,7 +46,7 @@ $(document).ready(function () {
       $("#gifs-section").empty();
       // Generate api query from data attribute of button clicked 
       var b = $(this).attr("data-name");
-      var queryURL = "https://api.giphy.com/v1/gifs/search?&api_key=3HskJVbTCA0hiHZGsNyb1jQ3Qh3U9vjf&q=" + b + "&limit=10&rating=G&lang=en";
+      var queryURL = "https://api.giphy.com/v1/gifs/search?&api_key=3HskJVbTCA0hiHZGsNyb1jQ3Qh3U9vjf&q=" + b + "&limit=10&lang=en";
       console.log(queryURL);
 
 
@@ -62,7 +73,7 @@ $(document).ready(function () {
                var gifImage = $("<img>");
                // Setting the src attribute of the image to a property pulled off the result item
                gifImage.attr("src", results[i].images.fixed_height.url)
-                       .attr('data-still', results[i].images.fixed_height_still.url)
+                  .attr('data-still', results[i].images.fixed_height_still.url)
                   .attr('data-animate', results[i].images.fixed_height.url)
                   .attr('data-state', "still")
                   .addClass("showImage");
@@ -72,10 +83,18 @@ $(document).ready(function () {
                gifDiv.append(p);
                gifDiv.append(gifImage);
                $("#gifs-section").prepend(gifDiv);
-
-               // Prependng the animalDiv to the HTML page in the "#gifs-appear-here" div
             }
-            console.log(results);
          })
+   });
+
+   $(document).on('click', '.showImage', function () {
+      var state = $(this).data('state');
+      if (state == "still") {
+         $(this).attr("data-state", "animated");
+         $(this).attr("src", $(this).attr("data-animated"));
+      } else {
+         $(this).attr("data-state", "still");
+         $(this).attr("src", $(this).attr("data-still"));
+      }
    });
 });
