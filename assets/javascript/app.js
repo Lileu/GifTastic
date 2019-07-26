@@ -14,7 +14,7 @@ $(document).ready(function () {
         // Loop through array to create buttons
         for (var i = 0; i < topics.length; i++) {
             var btn = $("<button>");
-            btn.addClass("btn btn-outline-primary gifTopic");
+            btn.addClass("btn gifTopic");
             btn.attr("data-name", topics[i]);
             btn.text(topics[i]);
             $("#buttons-section").append(btn);
@@ -54,6 +54,8 @@ $(document).ready(function () {
                 for (i = 0; i < results.length; i++) {
                     var gifDiv = $('<div class="imgDiv">');
                     var p = $("<p>").text("Rating: " + results[i].rating);
+                   
+                    
                     var gifImage = $("<img>");
                     // Set up gif data attributes
                     gifImage.attr("src", results[i].images.fixed_height_still.url)
@@ -62,8 +64,8 @@ $(document).ready(function () {
                         .attr('data-state', "still")
                         .addClass("showImage");
                     // Append the paragraph and image tag to the gifDiv
-                    gifDiv.append(p);
                     gifDiv.append(gifImage);
+                    gifDiv.append(p);
                     $("#gifs-section").prepend(gifDiv);
                 };
                 // On-click function to toggle between still and animated gif states

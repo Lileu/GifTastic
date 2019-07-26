@@ -19,43 +19,40 @@
 <body>
     <!-- jumbotron header -->
     <div class="container">
-        <div class="jumbotron">
-            <h1 class="text-center">GifTastic
-            </h1>
-        </div>
+        <div class="row">
+            <div class="col-md-10">
+                <h1 class="text-center">GIFTASTIC REACTIONS
+                </h1>
+            </div>
         <!-- topics area -->
         <div class="row" id="buttons-section">
         </div>
 
-
         <!-- search area -->
         <div class="container">
-            <div class="row">
-                <div class="col-md-8"></div>
+            <div class="row" id="search-section">
                 <form class="form-inline">
-                    <div class="form-group mb-2">
-                        <label for="staticEmail2" class="sr-only">Add a reaction</label>
-                        <input type="text" readonly class="form-control-plaintext" id="searchLabel"
-                            value="Add a reaction">
-                    </div>
-                    <div class="form-group mx-sm-3 mb-2">
-                        <input type="text" class="form-control" id="addTopic" placeholder="Enter text">
-                    </div>
-                    <button type="submit" id="submitBtn" class="form-group btn btn-primary mb-2">Submit</button>
+                    <div class="form-group mx-sm-3 mb-2"></div>
+                        <input type="text" class="form-control" id="addTopic" placeholder="Enter text">              
+                        <button type="submit" id="submitBtn" class="form-group btn btn-primary mb-2">Add reaction</button>
+                     </div>                 
                 </form>
             </div>
         </div>
+            <!-- gifs area -->
+            <div class="container">
+                <div class="row" id="gifs-section">
 
-    </div>
-    <!-- topics area -->
-    <div class="row" id="gifs-section">
-    </div>
-    </div>
+                </div>
+            </div>
+        </div>
 
- <!-- jQuery JS -->
- <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
- <script type="text/javascript" src="assets/javascript/app.js"></script>
+  
+
+    <!-- jQuery JS -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/javascript/app.js"></script>
 
 
 </body>

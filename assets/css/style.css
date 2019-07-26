@@ -1,50 +1,76 @@
-/*!
- * Start Bootstrap - Simple Sidebar (https://startbootstrap.com/template-overviews/simple-sidebar)
- * Copyright 2013-2019 Start Bootstrap
- * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-simple-sidebar/blob/master/LICENSE)
- */
- body {
-    overflow-x: hidden;
-  }
-  
-  #sidebar-wrapper {
-    min-height: 100vh;
-    margin-left: -15rem;
-    -webkit-transition: margin .25s ease-out;
-    -moz-transition: margin .25s ease-out;
-    -o-transition: margin .25s ease-out;
-    transition: margin .25s ease-out;
-  }
-  
-  #sidebar-wrapper .sidebar-heading {
-    padding: 0.875rem 1.25rem;
-    font-size: 1.2rem;
-  }
-  
-  #sidebar-wrapper .list-group {
-    width: 15rem;
-  }
-  
-  #page-content-wrapper {
-    min-width: 100vw;
-  }
-  
-  #wrapper.toggled #sidebar-wrapper {
-    margin-left: 0;
-  }
-  
-  @media (min-width: 768px) {
-    #sidebar-wrapper {
-      margin-left: 0;
-    }
-  
-    #page-content-wrapper {
-      min-width: 0;
-      width: 100%;
-    }
-  
-    #wrapper.toggled #sidebar-wrapper {
-      margin-left: -15rem;
-    }
-  }
-  
+* {
+  border-radius: 0 !important;
+}
+
+
+body {
+  background-color: black;
+  font-family: interface, Helvetica Neue, helvetica, sans-serif;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  font-size: 15px;
+  color: #fff;
+  display: flex;
+  position: relative;
+}
+
+
+h1 {
+  font-weight: 800;
+  display: flex;
+}
+
+
+.container {
+  padding: 0;
+}
+
+#gifs-section {
+  display: inline-flex;
+  justify-content: space-around;
+}
+
+
+#search-section {
+  position: relative;
+  margin-left: 0;
+}
+
+.form-inline {
+  display: block;
+}
+
+#submitBtn {
+  justify-content: center;
+  float: right; 
+  height: 100%;
+  cursor: pointer;
+  border-radius: 0;
+  padding: auto 15px;
+  border: none !important;;
+  margin-left: none;
+  background-image: linear-gradient(45deg, rgb(153, 51, 255) 0%, rgb(255, 102, 102) 100%) !important;
+}
+
+
+#addTopic {
+  width: auto;
+  z-index: 2;
+  float: left;
+  position: relative;
+  margin-left: 0;
+}
+
+
+
+.gifTopic {
+  font-weight: 600;
+  cursor: pointer;
+  height: 36px;
+  border-bottom: 4px solid rgb(0, 204, 255);
+  color: #fff;
+  margin: 20px 10px;
+  padding-left: 0;
+  padding-right: 0; 
+  ;}
