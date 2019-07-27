@@ -10,6 +10,7 @@ https://lileu.github.io/GifTastic/
 3. Bootstrap v4.3
 4. jQuery
 5. AJAX
+6. Giphy API
 
 ## Stuff I learned
 * What APIs actually do and how to plug into them using AJAX requests
