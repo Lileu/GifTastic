@@ -20,6 +20,7 @@ $(document).ready(function () {
             $("#buttons-section").append(btn);
         }
     }
+    
     // On-click Jquery function to push the submitted text into the topics array
     $("#submitBtn").on('click', function (event) {
         event.preventDefault();
@@ -33,12 +34,13 @@ $(document).ready(function () {
 
     // Click event to retrieve gifs from topic
     $(document).on('click', 'button', function () {
+        if ($(this).attr("data-name") !== undefined) {
         // Clear section
         $("#gifs-section").empty();
         // Generate api query from data attribute of button clicked 
         var b = $(this).attr("data-name");
         var queryURL = "https://api.giphy.com/v1/gifs/search?&api_key=3HskJVbTCA0hiHZGsNyb1jQ3Qh3U9vjf&q=" + b + "&limit=10&lang=en";
-        console.log(queryURL);
+        console.log(queryURL)};
 
         // GET request ajax call
         $.ajax({
@@ -54,8 +56,6 @@ $(document).ready(function () {
                 for (i = 0; i < results.length; i++) {
                     var gifDiv = $('<div class="imgDiv">');
                     var p = $("<p>").text("Rating: " + results[i].rating);
-                   
-                    
                     var gifImage = $("<img>");
                     // Set up gif data attributes
                     gifImage.attr("src", results[i].images.fixed_height_still.url)
@@ -79,9 +79,7 @@ $(document).ready(function () {
                         $(this).attr("data-state", "still");
                         $(this).attr("src", $(this).attr("data-still"));
                     }
-
                 });
-
             });
+        });
     });
-});

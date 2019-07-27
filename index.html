@@ -5,55 +5,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>GifTastic</title>
+    <title>GifTastic Reactions</title>
 
     <link rel="stylesheet" href="assets/css/reset.css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css" />
-
-
-
 </head>
 
 <body>
     <!-- jumbotron header -->
     <div class="container">
-        <div class="row">
+        <div class="row" id="header-section">
             <div class="col-md-10">
+                <img id="logo" src="assets/images/GIPHY Icon DarkBackgrounds 45.png" alt="Giphy logo">
                 <h1 class="text-center">GIFTASTIC REACTIONS
                 </h1>
             </div>
-        <!-- topics area -->
-        <div class="row" id="buttons-section">
-        </div>
 
-        <!-- search area -->
-        <div class="container">
-            <div class="row" id="search-section">
-                <form class="form-inline">
-                    <div class="form-group mx-sm-3 mb-2"></div>
-                        <input type="text" class="form-control" id="addTopic" placeholder="Enter text">              
-                        <button type="submit" id="submitBtn" class="form-group btn btn-primary mb-2">Add reaction</button>
-                     </div>                 
-                </form>
+            <!-- topics area -->
+            <div class="row" id="buttons-section">
             </div>
-        </div>
-            <!-- gifs area -->
-            <div class="container">
-                <div class="row" id="gifs-section">
 
+            <!-- search area -->
+            <div class="container">
+                <div class="row" id="search-section">
+                    <form class="form-inline">
+                        <input type="text" class="form-control" id="addTopic" placeholder="Enter text">
+                        <button type="submit" id="submitBtn" class="form-group btn btn-primary mb-2">ADD
+                            REACTION</button>
+                    </form>
                 </div>
             </div>
+            <!-- gifs area -->
+            <div class="container">
+                <div class="row" id="gifs-section"></div>
+            </div>
         </div>
-
-  
+    </div>
 
     <!-- jQuery JS -->
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script type="text/javascript" src="assets/javascript/app.js"></script>
-
 
 </body>
 
